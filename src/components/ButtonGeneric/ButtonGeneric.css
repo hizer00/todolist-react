@@ -1,0 +1,35 @@
+.button-generic {
+  --button_radius: 0.75em;
+  --button_color: #ffffff;
+  --button_outline_color: #000000;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--button_radius);
+  background: var(--button_outline_color);
+  cursor: pointer;
+}
+
+.button-top {
+  font-size: .75rem;
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid var(--button_outline_color);
+  border-radius: var(--button_radius);
+  padding: 0.5em 1.25em;
+  background: var(--button_color);
+  color: var(--button_outline_color);
+  transform: translateY(-0.2em);
+  transition: transform 0.1s ease;
+}
+
+.button-generic:hover .button-top {
+  transform: translateY(-0.33em);
+}
+
+.button-generic:active .button-top {
+  transform: translateY(0);
+}
+
+.button-active > .button-top {
+  transform: translateY(0);
+}
