@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { createHashHistory } from 'history';
 
 import Home from './views/Home/Home'
 import Todolist from './views/Todolist/Todolist'
@@ -11,8 +12,11 @@ import isDesktop from './hooks/isDesktop'
 import New from './layout/new/New'
 
 function App() {
+
+  const hashHistory = createHashHistory();
+
   return (
-    <BrowserRouter>
+    <BrowserRouter  history={hashHistory}>
       <Navbar />
       {isDesktop() ? <Cursor /> : ""}
 
