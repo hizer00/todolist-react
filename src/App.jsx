@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { createHashHistory } from 'history';
 
 import Home from './views/Home/Home'
@@ -16,7 +16,7 @@ function App() {
   const hashHistory = createHashHistory();
 
   return (
-    <BrowserRouter  history={hashHistory}>
+    <HashRouter  history={hashHistory}>
       <Navbar />
       {isDesktop() ? <Cursor /> : ""}
 
@@ -28,7 +28,7 @@ function App() {
         <Route path='*' element={<NotFound />} />
       </Routes>
 
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
